@@ -57,7 +57,6 @@ export default Vue.extend({
   async fetch(): Promise<void> {
     if (process.server) {
       const fs = require('fs');
-      const { DateTime } = require("luxon");
 
       const rawData = fs.readFileSync('stats/scc.json', 'utf-8')
       const data: StatsFile = JSON.parse(rawData)

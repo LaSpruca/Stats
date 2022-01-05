@@ -27,7 +27,7 @@ import { DateTime } from "luxon"
 
 export default Vue.extend({
   name: 'Heading',
-  props: { updatedAt: Date, percentRewritten: Number },
+  props: { updatedAt: Object, percentRewritten: Number },
   data() {
     const date = DateTime.fromJSDate(this.updatedAt)
     return {
