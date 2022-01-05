@@ -17,7 +17,7 @@ export default Vue.extend({
   mounted() {
     if (process.client) {
       const canvas: HTMLCanvasElement = this.$refs.canvas as HTMLCanvasElement;
-      const logo = (this.$refs.logo as Vue).$el as HTMLElement
+      const logo = (this.$refs.logo as Vue)?.$el as HTMLElement | null
 
       const ctx = canvas.getContext('2d');
       if (!ctx) return;
@@ -49,7 +49,7 @@ export default Vue.extend({
         ctx.fillStyle = '#61e7ab';
         ctx.textAlign = "center"
         ctx.font = "18px monospace"
-        ctx.fillText('↓ '+percent.toFixed(1) + '%',
+        ctx.fillText('↓ ' + percent.toFixed(1) + '%',
           x, height - 30)
       }
 
@@ -62,8 +62,9 @@ export default Vue.extend({
         const value = Math.min(this.percent, this.percent * passed)
         const scale = 1 - (value / 100)
 
-        logo.style.transform = `translate(-50%, -50%) scale(${ scale }, ${ scale })`
-
+        if (logo != null) {
+          logo.style.transform = `translate(-50%, -50%) scale(${ scale }, ${ scale })`
+        }
         draw(ctx, value)
         if (value >= this.percent) return
         requestAnimationFrame(animate)
