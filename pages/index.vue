@@ -29,7 +29,7 @@ type StatsFile = CodeStats[];
 interface Data {
   kotlinStats: CodeStats;
   javaStats: CodeStats;
-  changedAt: Date | undefined;
+  changedAt:  number;
   percentRewritten: number;
   percentSizeChange: number;
 }
@@ -49,7 +49,7 @@ export default Vue.extend({
   data: (): Data => ({
     javaStats: emptyStats,
     kotlinStats: emptyStats,
-    changedAt: undefined,
+    changedAt: 0,
     percentRewritten: 0,
     percentSizeChange: 0
   }),
@@ -79,7 +79,7 @@ export default Vue.extend({
 
       this.percentRewritten = (removedLines / originalLines) * 100;
       this.percentSizeChange = (kotlinSizeChange * 100);
-      this.changedAt = new Date()
+      this.changedAt = new Date().getTime()
     }
   }
 })

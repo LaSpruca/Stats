@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Logo class="logo" ref="logo"/>
+    <img src="/icon_256.png" alt="MCK" width="200" height="200" ref="logo" class="logo">
     <canvas class="canvas" ref="canvas" width="300" height="300"></canvas>
     <p class="subtext">% Smaller</p>
   </div>
@@ -17,7 +17,7 @@ export default Vue.extend({
   mounted() {
     if (process.client) {
       const canvas: HTMLCanvasElement = this.$refs.canvas as HTMLCanvasElement;
-      const logo = (this.$refs.logo as Vue)?.$el as HTMLElement | null
+      const logo = this.$refs.logo as HTMLElement | null
 
       const ctx = canvas.getContext('2d');
       if (!ctx) return;
