@@ -2,7 +2,7 @@
   <div class="heading">
     <div class="heading__wrapper">
       <div class="heading__content">
-        <h1 class="heading__title">MCK</h1>
+        <img src="/alto.png" alt="Alto" class="logo">
         <p class="heading__desc">The goal of this project is to write a version of Minecraft in Kotlin using the latest
           libraries and
           technologies. With the end goal of being the highest performance Minecraft client for PC
@@ -10,8 +10,7 @@
         </p>
         <p class="heading__date">Updated at {{ changedAt }}</p>
         <div class="heading__buttons">
-          <a href="https://github.com/MinecraftKotlin" target="_blank" rel="noopener" class="heading__github">
-            <GithubIcon class="heading__github__icon"/>
+          <a href="https://github.com/AltoClient" target="_blank" rel="noopener" class="heading__github">
             View on Github
           </a>
         </div>
@@ -38,6 +37,11 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
+
+.logo {
+  height: 100px;
+  margin-bottom: 1rem;
+}
 .heading {
   max-width: 900px;
   padding: 2rem;
@@ -71,12 +75,13 @@ export default Vue.extend({
     display: block;
     margin-top: 0.5em;
     font-size: 1rem;
-    color: #555;
+    color: #888;
   }
 
   &__date {
     margin: 0.5rem 0;
     color: #9653c4;
+    font-weight: bold;
   }
 
   &__buttons {
@@ -84,12 +89,14 @@ export default Vue.extend({
   }
 
   &__github {
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    border: 2px solid #FFFFFF;
+    padding: 0.7rem;
+    border: 5px solid #FFFFFF;
+    font-weight: bold;
     color: #FFFFFF;
     display: inline-block;
     text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-top: 1rem;
 
     &__icon {

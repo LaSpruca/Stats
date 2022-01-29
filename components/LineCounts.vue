@@ -66,7 +66,7 @@ export default Vue.extend({
 
 
 .line-count {
-  background: #111111;
+  background: #29226c;
   margin: 1rem 0;
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@ export default Vue.extend({
   &__icon {
     vertical-align: middle;
     margin-right: 1rem;
-    background: #181818;
+    background: #2f2780;
     padding: 16px;
     width: 64px;
     height: 64px;

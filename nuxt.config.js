@@ -5,7 +5,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'MCK - Minecraft Kotlin',
+    title: 'Alto - The most performant Minecraft client',
     htmlAttrs: {
       lang: 'en'
     },
