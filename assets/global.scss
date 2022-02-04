@@ -12,4 +12,5 @@ body {
   background: linear-gradient(  #2c2377,#1f1f50);
   background-size: cover;
   color: white;
+  min-height: calc(100vh - 5rem);
 }
